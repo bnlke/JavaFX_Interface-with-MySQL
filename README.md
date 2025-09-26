@@ -1,73 +1,76 @@
-🎓 Student & Project Management App (JavaFX + MySQL)
-This is a desktop application built with JavaFX (designed using Scene Builder) and connected to a MySQL database. The application allows full CRUD (Create, Read, Update, Delete) operations for managing students and their academic projects within a university context.
+# 🎓 Student & Project Management App (JavaFX + MySQL)
 
-📌 Features
-🔍 View all students and their assigned projects
-➕ Add new students and projects
-✏️ Edit existing records
-🗑️ Delete students or projects
-🔗 Link students to specific projects
-📋 Display data using JavaFX TableViews
-🧰 Technologies Used
-Java 21+
-JavaFX – UI framework
-Scene Builder – for UI layout design (FXML)
-MySQL – relational database
-JDBC – for Java-MySQL connectivity
-(Optional) Maven or Gradle for project management
-🚀 Quick Start
+This is a desktop application built with **JavaFX** (designed using Scene Builder) and connected to a **MySQL** database. The application allows full **CRUD** (Create, Read, Update, Delete) operations for managing students and their academic projects within a university context.
+
+---
+
+## 📌 Features
+
+- 🔍 View all students and their assigned projects  
+- ➕ Add new students and projects  
+- ✏️ Edit existing records  
+- 🗑️ Delete students or projects  
+- 🔗 Link students to specific projects  
+- 📋 Display data using JavaFX `TableView` components  
+
+---
+
+## 🧰 Technologies Used
+
+| Component     | Technology                  |
+|---------------|------------------------------|
+| Language      | Java 21+                     |
+| UI Framework  | JavaFX (FXML)               |
+| UI Design     | Scene Builder               |
+| Database      | MySQL                       |
+| Connectivity  | JDBC                        |
+| Project Build | (Optional) Maven or Gradle  |
+| IDE           | Visual Studio Code          |
+
+---
+
+## 🚀 Quick Start
+
 Follow these steps to run the application locally:
 
-1. Clone the repository
+---
+
+### 1. Clone the Repository
+
 If you use Git, run:
 
+```bash
 git clone https://github.com/bnlke/JavaFX-Interface-with-MySQL-Database.git
 cd JavaFX-Interface-with-MySQL-Database
 
-2. Import the project into Visual Studio Code
-
-Go to File → Open Folder...
-Select the JavaFX_Interface folder.
-If you're using extensions like Java Extension Pack, it will auto-detect and index the project.
+2. Import the Project into Visual Studio Code
 
 3. Install MySQL & Set Up the Database
 
 Make sure MySQL is installed and running locally.
-Create a new database:
+Create the database and the tables.
 
-CREATE DATABASE university_db;
-USE university_db;
+4. Configure the Database Connection in Code
 
--- Sample (dump.sql):
-CREATE TABLE students (...);
-CREATE TABLE projects (...);
--- etc.
+Open the file App.java and update your connection string:
 
-4. Configure the database connection in code
+Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/your_database",
+    "root",
+    "your_password"
+);
 
-Open the file App.java and update the credentials:
-
-con = DriverManager.getConnection("jdbc:mysql://localhost:3306/your_database",
-                    "root", "your_password");
-
-Make sure:
-
-MySQL is running on port 3306
-You have the correct username & password
-The database name matches (university_db)
-
-5. Set up JavaFX in your environment
+5. Set Up JavaFX in Your Environment
 
 Download JavaFX SDK
-Extract it to a known location, e.g., C:\javafx-sdk-21\
-In VS Code, go to Run and Debug → Configure launch.json
-Add the following to VM options:
+Extract it to a known location (e.g. C:\javafx-sdk-21\)
+In VS Code, go to:
+Run and Debug → create launch.json
+Add the following in the vmArgs field: "vmArgs": "--module-path C:/javafx-sdk-21/lib --add-modules javafx.controls,javafx.fxml"
 
-"vmArgs": "--module-path "C:/javafx-sdk-21/lib" --add-modules javafx.controls,javafx.fxml"
+6. Run the Application
 
-6. Run the application
-
-Open App.java inside JavaFX_Interface
+Open the file App.java inside the JavaFX_Interface folder
 Click Run
-The JavaFX interface should load
-You can now interact with the database: add, edit, or delete students and projects
+The JavaFX interface should start
+You can now add, view, edit, or delete students and projects via the UI
