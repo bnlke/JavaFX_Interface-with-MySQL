@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+   xmlns="http://javafx.com/javafx/21"
+   xmlns:fx="http://javafx.com/fxml/1" fx:controller="database.AddProjectController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane layoutY="-1.0" prefHeight="407.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="ID" layoutX="75.0" layoutY="93.0" promptText="ID" />
+                  <TextField fx:id="projectName" layoutX="75.0" layoutY="141.0" promptText="ProjectName" />
+                  <TextArea fx:id="projectDescription" layoutX="317.0" layoutY="73.0" prefHeight="200.0" prefWidth="200.0" promptText="ProjectDescription" />
+                  <Button fx:id="addBtn" layoutX="103.0" layoutY="204.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" style="-fx-background-color: red;" text="Add" onAction="#handleAddProject">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
